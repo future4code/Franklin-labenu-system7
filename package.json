@@ -4,7 +4,9 @@
   "description": "Projeto em grupo Labenu",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node build/index.js",
+    "dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts"
   },
   "author": "Bruno, Maria e Wanuzia",
   "license": "ISC",
@@ -22,6 +24,8 @@
     "@types/knex": "^0.16.1",
     "@types/mysql": "^2.15.18",
     "@types/node": "^18.7.14",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
     "typescript": "^4.2.3"
   }
 }
