@@ -1,7 +1,7 @@
 import { Usuario } from "./Usuario";
 
 export class Docente extends Usuario{
-    especialidades:string[];
+    especialidades?:string[];
     constructor(
         id:string,
         nome:string,
@@ -11,9 +11,6 @@ export class Docente extends Usuario{
             super(id, nome, email, data_nasc)
             this.especialidades = especialidades
         }
-    public getEspecialidades():string[]{
-        return this.especialidades
-    }
     public setEspecialidades(especialidades:string[]):void{
         this.especialidades = especialidades
     }
