@@ -1,10 +1,11 @@
 export class Usuario {
-    private id:number | undefined;
+    id:string;
     nome:string;
     email:string;
     data_nasc:Date;
     static  turma_id:number
-    constructor(nome:string, email:string, data_nasc:Date){
+    constructor(id:string, nome:string, email:string, data_nasc:Date){
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.data_nasc = data_nasc;
