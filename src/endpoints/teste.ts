@@ -1,6 +1,6 @@
 import { Response, Request } from "express";
 
-const teste =   (req:Request, res:Response) => {
+const teste = (req:Request, res:Response) => {
   res.send("Rota funcionando!")
 };
 

@@ -11,19 +11,19 @@ export class Usuario {
         this.data_nasc = data_nasc;
     }
     public getIdUsuario(){
-        return this.id
+        return this.id;
     }
     public getNome():string {
-        return this.nome
+        return this.nome;
     }
     public getEmail():string{
-        return this.email
+        return this.email;
     }
     public getDataNasc():Date{
-        return this.data_nasc
+        return this.data_nasc;
     }
     public setTurmaId(turma_id:number):void {
-        Usuario.turma_id = turma_id
+        Usuario.turma_id = turma_id;
     }
     
 }
