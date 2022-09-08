@@ -48,16 +48,18 @@ export class DocenteDatabase {
 
         return result[0]
     };
-    public async criaEspecialidades(id:string, especialidade_id :number){
+    public async criaEspecialidades(id:string, especialidade_id:number){
         await connection
         .insert({docente_id:id, especialidade_id:especialidade_id })
         .into('Docente_Especialidade')
     }
 
-    public async setEspecialidadeId(id:string, especialidade_id :number){
+    public async setEspecialidadeId(id:string, especialidade_id:number){
         await connection
-        .update({especialidade_id: especialidade_id })
+        .update({docente_id:id, especialidade_id: especialidade_id })
         .from('Docente_Especialidade as de')
         .where('de.docente_id', '=', `${id}`)
+
     }
+    
 }

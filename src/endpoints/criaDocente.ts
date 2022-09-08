@@ -5,7 +5,8 @@ import { IdGenerator } from "../service/IdGenerator";
 
 export const criaDocente = async (req:Request, res:Response) => {
     const id:string = new IdGenerator().generateId();
-    const {nome, email, data_nasc, especialidadeId} = req.body;
+    const {nome, email, data_nasc} = req.body;
+    const especialidadeId = Number(req.body);
     const newUser:Docente = new Docente(id, nome, email, data_nasc);
     try{
              
@@ -28,10 +29,10 @@ export const criaDocente = async (req:Request, res:Response) => {
         const userDatabase = new DocenteDatabase()
         await  userDatabase.createUser(id, nome, email, data_nasc)
 
-        if(especialidadeId){
-           await userDatabase.criaEspecialidades(id, especialidadeId);
+        if(!especialidadeId){
+           await userDatabase.criaEspecialidades(id, 1);
         }
-
+            await userDatabase.setEspecialidadeId(id, especialidadeId)
             res.status(201).send("Docente cadastrado com sucesso.")
 
     }catch(error:any) {

@@ -16,9 +16,9 @@ export const updateEspecialidade = async (req:Request, res:Response) => {
         if(user) {
             userDatabase.setEspecialidadeId(user.id, especialidade_id ) 
             res.status(201).send("Especialidades incluídas com sucesso!")
-        }
-           await userDatabase.criaEspecialidades(id, especialidade_id );
-            res.status(201).send("Especialidades do docente cadastradas com sucesso.")
+        }else
+        {   await userDatabase.criaEspecialidades(id, especialidade_id );
+            res.status(201).send("Especialidades do docente cadastradas com sucesso.")}
 
     }catch(error:any) {
         res.send(error)
