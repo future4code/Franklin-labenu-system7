@@ -24,7 +24,7 @@ export class DocenteDatabase {
 
         return result[0]
     }
-    public async getUserById(id:string): Promise<any>{
+    public async getUserById(id:string): Promise<Usuario>{
         const result = await connection
         .select("*")
         .from(this.tableName)
@@ -48,13 +48,13 @@ export class DocenteDatabase {
 
         return result[0]
     };
-    public async criaEspecialidades(id:string, especialidade_id:number){
+    public async criaEspecialidades(id:string, especialidade_id:number):Promise<void>{
         await connection
         .insert({docente_id:id, especialidade_id:especialidade_id })
         .into('Docente_Especialidade')
     }
 
-    public async setEspecialidadeId(id:string, especialidade_id:number){
+    public async setEspecialidadeId(id:string, especialidade_id:number):Promise<void>{
         await connection
         .update({docente_id:id, especialidade_id: especialidade_id })
         .from('Docente_Especialidade as de')
