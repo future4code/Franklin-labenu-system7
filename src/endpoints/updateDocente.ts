@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
-import { DocenteDatabase } from "../database/DocenteDatabase";
+import { DocenteDatabase } from "../service/DocenteDatabase";
 
-export const updateEspecialidade = async (req:Request, res:Response) => {
+export const updateDocente = async (req:Request, res:Response) => {
     const {id} = req.params;
-    const especialidade_id = Number(req.body);
+    const especialidade_id = Number(req.body.especialidade_id); /*erro NaN quando o campo está preenchido */
+    const turma_id = Number(req.body)
 
     try{
              
@@ -14,7 +15,7 @@ export const updateEspecialidade = async (req:Request, res:Response) => {
         const userDatabase = new DocenteDatabase()
         const user =  await userDatabase.getEspecialidadeByUserById(id)
         if(user) {
-            userDatabase.setEspecialidadeId(user.id, especialidade_id ) 
+            userDatabase.setEspecialidadeId(id, especialidade_id ) 
             res.status(201).send("Especialidades incluídas com sucesso!")
         }else
         {   await userDatabase.criaEspecialidades(id, especialidade_id );

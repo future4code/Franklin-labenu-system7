@@ -1,6 +1,6 @@
 import { Usuario } from "./Usuario";
 
-type Especialidades = {
+export type Especialidades = {
     especialidades:string[];
 }
 export class Docente extends Usuario{

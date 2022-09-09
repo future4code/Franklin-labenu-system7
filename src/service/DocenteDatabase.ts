@@ -1,4 +1,4 @@
-import { Docente } from "../classes/Docente";
+import { Docente, Especialidades } from "../classes/Docente";
 import { Usuario } from "../classes/Usuario";
 import connection from "../connection";
 
@@ -33,14 +33,15 @@ export class DocenteDatabase {
         return result[0]
     };
 
-    public async getAll():Promise<Docente>{
+    public async getAll(){
         const result = await connection
         .select("*")
         .from(this.tableName)
-
-        return result[0]
+        
+        return result
+        
     }
-    public async getEspecialidadeByUserById(id:string): Promise<any>{
+    public async getEspecialidadeByUserById(id:string): Promise<Especialidades>{
         const result = await connection
         .select("*")
         .from('Docente_Especialidade')
@@ -61,5 +62,6 @@ export class DocenteDatabase {
         .where('de.docente_id', '=', `${id}`)
 
     }
+    
     
 }

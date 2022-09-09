@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DocenteDatabase } from "../database/DocenteDatabase";
+import { DocenteDatabase } from "../service/DocenteDatabase";
 import { Docente } from "../classes/Docente";
 import { IdGenerator } from "../service/IdGenerator";
 
@@ -32,7 +32,7 @@ export const criaDocente = async (req:Request, res:Response) => {
         if(!especialidadeId){
            await userDatabase.criaEspecialidades(id, 1);
         }
-            await userDatabase.setEspecialidadeId(id, especialidadeId)
+            await userDatabase.criaEspecialidades(id, especialidadeId)
             res.status(201).send("Docente cadastrado com sucesso.")
 
     }catch(error:any) {
