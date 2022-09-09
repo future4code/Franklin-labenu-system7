@@ -20,19 +20,19 @@ Ele deve possuir, ao menos, as 3 entidades importantes:
 
 As funcionalidades básicas são:
 
-→ Criar estudante;
+→ Criar estudante :white_check_mark:;
 
-→ Criar docente;
+→ Criar docente :white_check_mark:;
 
 → Criar turma;
 
 → Adicionar estudante na turma;
 
-→ Adicionar docente na turma;
+→ Adicionar docente na turma :white_check_mark:;
 
 → Pegar todos os estudantes;
 
-→ Pegar todos os docentes;
+→ Pegar todos os docentes :white_check_mark:;
 
 → Pegar todos os estudantes e docentes de uma turma.
 
