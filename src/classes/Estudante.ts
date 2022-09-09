@@ -1,19 +1,24 @@
 import { Usuario } from "./Usuario";
 
+type Hobbies = {
+    hobbies:string[];
+
+}
+
 export class Estudante extends Usuario {
-    hobbies: string[];
+    hobbies?:Hobbies;
+    turma_id?:number;
 
     constructor(
-        nome: string,
-        email: string,
-        data_nasc: Date,
-        hobbies: string[]
+        id: string,
+        nome:string,
+        email:string,
+        data_nasc:Date
     ) {
-        super(nome, email, data_nasc)
-        this.hobbies = hobbies;
+        super(id, nome, email, data_nasc)
     }
 
-    public getHobbies(): string[] {
-        return this.hobbies;
+    public getHobbies(hobbies:Hobbies){
+        return this.hobbies = hobbies;
     };
 }

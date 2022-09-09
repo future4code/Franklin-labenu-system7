@@ -1,0 +1,53 @@
+CREATE TABLE Estudante (
+id VARCHAR(255) PRIMARY KEY,
+nome VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL UNIQUE,
+data_nasc DATE NOT NULL,
+turma_id INT,
+FOREIGN KEY (turma_id) REFERENCES Turma(id)
+);
+
+CREATE TABLE Estudante_Hobby (
+id INT AUTO_INCREMENT PRIMARY KEY,
+estudante_id VARCHAR(255) NOT NULL,
+hobby_id INT NOT NULL,
+FOREIGN KEY (estudante_id) REFERENCES Estudante(id),
+FOREIGN KEY (hobby_id) REFERENCES Hobby(id)
+);
+
+CREATE TABLE Hobby (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE Turma (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(255),
+modulo VARCHAR(255) DEFAULT 0
+);
+
+CREATE TABLE Docente (
+id VARCHAR(255) PRIMARY KEY,
+nome VARCHAR(255)NOT NULL,
+email VARCHAR(255) NOT NULL UNIQUE,
+data_nasc DATE NOT NULL,
+turma_id INT,
+FOREIGN KEY (turma_id) REFERENCES Turma(id)
+);
+
+CREATE TABLE Docente_Especialidade (
+id INT AUTO_INCREMENT PRIMARY KEY,
+docente_id VARCHAR(255) NOT NULL,
+especialidade_id INT NOT NULL DEFAULT 1,
+FOREIGN KEY (docente_id) REFERENCES Docente(id),
+FOREIGN KEY (especialidade_id) REFERENCES Especialidade(id)
+);
+
+CREATE TABLE Especialidade (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(255) NOT NULL UNIQUE
+);
+
+
+INSERT INTO Especialidade(nome)
+VALUES("JS"), ("CSS"), ("React"), ("Typescript"), ("POO")
