@@ -30,4 +30,13 @@ As funcionalidades básicas são:
 
 → Adicionar docente na turma;
 
-→ Pegar a idade de algum estudante a partir do id
+→ Pegar todos os estudantes;
+
+→ Pegar todos os docentes;
+
+→ Pegar todos os estudantes e docentes de uma turma.
+
+
+### Documentação da API no **Postman** : <a href="https://documenter.getpostman.com/view/21448142/VVQX3SU8">Link aqui</a> 
+
+Em processo de desenvolvimento.
