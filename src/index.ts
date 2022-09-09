@@ -5,6 +5,7 @@ import teste from "./endpoints/teste";
 import { updateDocente } from "./endpoints/updateDocente";
 
 app.get("/teste",teste);
-app.post("/user/docente", criaDocente)
+app.post("/docente", criaDocente)
 app.put("/docente/:id", updateDocente)
 app.get("/docente", getAllDocentes)
+app.put("/docente/:id/turma", updateDocente)

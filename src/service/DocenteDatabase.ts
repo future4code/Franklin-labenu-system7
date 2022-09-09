@@ -28,12 +28,12 @@ export class DocenteDatabase {
         const result = await connection
         .select("*")
         .from(this.tableName)
-        .where({ id });
+        .where("id", "=", `${id}`);
 
         return result[0]
     };
 
-    public async getAll(){
+    public async getAll():Promise<Docente[]>{
         const result = await connection
         .select("*")
         .from(this.tableName)
@@ -57,11 +57,15 @@ export class DocenteDatabase {
 
     public async setEspecialidadeId(id:string, especialidade_id:number):Promise<void>{
         await connection
-        .update({docente_id:id, especialidade_id: especialidade_id })
+        .update({especialidade_id: especialidade_id })
         .from('Docente_Especialidade as de')
         .where('de.docente_id', '=', `${id}`)
 
     }
-    
-    
+    public async setTurma(id:string, turma_id:number) {
+        await connection
+        .update({turma_id: turma_id})
+        .from(this.tableName)
+        .where('id', '=', `${id}`)
+    }
 }
