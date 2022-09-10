@@ -30,15 +30,18 @@ export const criaDocente = async (req:Request, res:Response) => {
         await  userDatabase.createUser(id, nome, email, data_nasc)
 
         if(!especialidadeId){
-           await userDatabase.criaEspecialidades(id, 1);
+           const padrao:number = 1;
+           await userDatabase.criaEspecialidades(id, padrao);
+           res.status(201).send(newUser)
         }
             await userDatabase.criaEspecialidades(id, especialidadeId)
-            res.status(201).send("Docente cadastrado com sucesso.")
+            res.status(201).send(newUser)
 
     }catch(error:any) {
         res.send(error)
         if(res.statusCode === 200) {
-            res.status(500).send({message: "Internal server error"})
+            res.send(newUser)
+            // res.status(500).send({message: "Internal server error"})
         }else {
             res.send({message: error.message})
         }
