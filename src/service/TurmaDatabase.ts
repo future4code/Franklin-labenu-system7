@@ -30,4 +30,12 @@ export class TurmaDatabase{
         .from('Turma as t')
         .where('t.nome', '=', `${nome}`)
     }
+    public async getTurmasAtivas():Promise<Turma[]>{
+        const result = await connection
+        .select("*")
+        .from('Turma as t')
+        .where('t.modulo', '!=', '0')
+
+        return result
+    }
 }
