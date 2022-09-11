@@ -24,10 +24,10 @@ export class TurmaDatabase{
 
         return result
     }
-    public async mudaModulo(modulo:Modulo, id:number):Promise<void>{
+    public async mudaModulo(nome:string, modulo:Modulo):Promise<void>{
         await connection
         .update({modulo})
         .from('Turma as t')
-        .where('t.id', '=', `${id}`)
+        .where('t.nome', '=', `${nome}`)
     }
 }

@@ -1,8 +1,9 @@
 export enum Modulo {
     DEFAULT = "0",
-    Modulo1 = "js",
-    Modulo2 = "react",
-    Modulo3 = "Typescript"
+    Modulo1 = "JavaScript",
+    Modulo2 = "React",
+    Modulo3 = "Typescript",
+    Modulo4 = "SQL"
 }
 
 export class Turma {
