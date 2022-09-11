@@ -23,7 +23,7 @@ export const criaDocente = async (req:Request, res:Response) => {
             
         }
         if(!nome || !data_nasc ) {
-            res.send("Insira todos os dados")
+            res.send("Insira todos os dados obrigatórios: nome, email e data de nascimento.")
             return
         }
         const userDatabase = new DocenteDatabase()
