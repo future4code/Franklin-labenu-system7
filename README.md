@@ -24,19 +24,19 @@ As funcionalidades básicas são:
 
 → Criar docente :white_check_mark:;
 
-→ Criar turma;
+→ Criar turma :white_check_mark:;
 
 → Mudar estudante de turma;
 
 → Mudar docente de turma :white_check_mark:;
 
-→ Mudar turma de módulo;
+→ Mudar turma de módulo :white_check_mark:;
 
 → Buscar estudantes através do nome;
 
 → Pegar todos os docentes :white_check_mark:;
 
-→ Buscar turmas ativas.
+→ Buscar turmas ativas :white_check_mark:.
 
 
 ### Documentação da API no **Postman** : <a href="https://documenter.getpostman.com/view/21448142/VVQX3SU8">Link aqui</a> 
