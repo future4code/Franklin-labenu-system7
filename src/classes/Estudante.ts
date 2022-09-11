@@ -7,7 +7,6 @@ type Hobbies = {
 
 export class Estudante extends Usuario {
     hobbies?:Hobbies;
-    turma_id?:number;
 
     constructor(
         id: string,
