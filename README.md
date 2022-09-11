@@ -32,7 +32,7 @@ As funcionalidades básicas são:
 
 → Mudar turma de módulo :white_check_mark:;
 
-→ Buscar estudantes através do nome;
+→ Buscar estudantes através do nome :white_check_mark:;
 
 → Pegar todos os docentes :white_check_mark:;
 
