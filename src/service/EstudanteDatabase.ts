@@ -7,8 +7,8 @@ export class EstudanteDatabase {
         
         const result = await connection
         .select("*")
-        .from('Estudante')
-        .where({ nome });
+        .from('Estudante as e')
+        .where('e.nome', 'LIKE', `%${nome}%`);
 
         return result
 
