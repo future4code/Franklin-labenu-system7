@@ -1,6 +1,4 @@
 import { Request, Response } from "express";
-import { Estudante } from "../../classes/Estudante";
-import connection from "../../connection";
 import { EstudanteDatabase } from "../../service/EstudanteDatabase";
 
 export const pegarEstudantes = async (req:Request, res:Response) => {
@@ -12,6 +10,7 @@ export const pegarEstudantes = async (req:Request, res:Response) => {
      res.status(200).send(result)
     }catch(error){
      res.statusCode = 500;
-     res.send("erro inesperado! Tente novamente!")
+      res.send({message: error.message})
+
     }
  }
