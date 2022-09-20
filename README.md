@@ -20,14 +20,25 @@ Ele deve possuir, ao menos, as 3 entidades importantes:
 
 As funcionalidades básicas são:
 
-→ Criar estudante;
+→ Criar estudante :white_check_mark:;
 
-→ Criar docente;
+→ Criar docente :white_check_mark:;
 
-→ Criar turma;
+→ Criar turma :white_check_mark:;
 
-→ Adicionar estudante na turma;
+→ Mudar estudante de turma;
 
-→ Adicionar docente na turma;
+→ Mudar docente de turma :white_check_mark:;
 
-→ Pegar a idade de algum estudante a partir do id
+→ Mudar turma de módulo :white_check_mark:;
+
+→ Buscar estudantes através do nome :white_check_mark:;
+
+→ Pegar todos os docentes :white_check_mark:;
+
+→ Buscar turmas ativas :white_check_mark:.
+
+
+### Documentação da API no **Postman** : <a href="https://documenter.getpostman.com/view/21448142/VVQX3SU8">Link aqui</a> 
+
+Em processo de desenvolvimento.
